@@ -1,0 +1,101 @@
+<html> 
+<head> 
+<title>My Calculator</title> 
+</head> 
+<style> 
+#result{text-align:right} #per{width:50px} input:hover{background-color:yellow} input{width:50;font-size:14} #result{width:235; font-size:20} 
+#tbl{margin-top:200} 
+</style> 
+<body> 
+<table border=2 align=center id=tbl> 
+<tr> 
+<td colspan="4"><input type=text name=txt1 id=result value=0></td> </tr> 
+ 
+<tr> 
+<td ><center><input type=button value=% onclick=percentage() id=per><center></td> 
+<td><center><input type=button value=CE onclick=ce()></center></td> 
+<td><center><input type=button value=C onclick=ce()></center></td> 
+<td><center><input type=button value=<- ></center></td> 
+</tr> 
+ 
+<tr> 
+<td ><center><input type=button value=1/x onclick=onedevide()><center></td> 
+<td><center><input type=button value=x^2 onclick=xsqr()></center></td> <td><center><input type=button value=sqrt(x) onclick=sq()></center></td> 
+<td><center><input type=button value=/ onclick=division() id=div></center></td> 
+</tr> 
+ 
+<tr> 
+<td ><center><input type=button value=7 onclick=seven()><center></td> 
+<td><center><input type=button value=8 onclick=eight()></center></td> 
+<td><center><input type=button value=9 onclick=nine()></center></td> 
+<td><center><input type=button value=* onclick=multi() id=mul></center></td> 
+</tr> 
+<tr> 
+<td ><center><input type=button value=4 onclick=four()><center></td> 
+<td><center><input type=button value=5 onclick=five()></center></td> 
+<td><center><input type=button value=6 onclick=six()></center></td> 
+<td><center><input type=button value=- onclick=minus() id=sub></center></td> </tr> 
+ 
+<tr> 
+<td ><center><input type=button value=1 onclick=one()><center></td> 
+<td><center><input type=button value=2 onclick=two()></center></td> 
+<td><center><input type=button value=3 onclick=three()></center></td> 
+<td><center><input type=button value=+ onclick=plus() id=add></center></td> 
+</tr> 
+<tr> 
+<td ><center><input type=button value=+/- onclick=plusminus()></center></td> 
+<td><center><input type=button value=0 onclick=zero()></center></td> 
+<td><center><input type=button value=. onclick=dot() id=dt></center></td> 
+<td><center><input type=button value= = onclick=myresult()></center></td> 
+</tr> 
+ 
+</body> <script> var str; function get() {    str=document.getElementById("result").value; 
+} function myresult() 
+{   var r=eval(str);   document.getElementById("result").value="";   document.getElementById("result").value=r; 
+} function one() {      get();      str=str+1;        document.getElementById("result").value=str; 
+} function plus() {      get(); 
+     var x=document.getElementById("add").value; 
+     str=str+x;        document.getElementById("result").value=str; 
+} function sq() 
+{ 
+     get();      var  t=Math.sqrt(str);      document.getElementById("result").value=t; 
+} function dot() {      get(); 
+     var x=document.getElementById("dt").value;      str=str+x;      document.getElementById("result").value=str;        
+} function plusminus() 
+{      get();      str=-(str); 
+     document.getElementById("result").value=str; 
+} function xsqr() {      get();      var  t=str*str;      document.getElementById("result").value=t; 
+} function onedevide() 
+{      get();      var  t=1/str;      document.getElementById("result").value=t; 
+} 
+function percentage() 
+{      get(); 
+     var x=document.getElementById("per").value; 
+     str=str+x;        document.getElementById("result").value=str; 
+} function minus() 
+{      get(); 
+     var x=document.getElementById("sub").value; 
+     str=str+x;        document.getElementById("result").value=str; 
+} function multi() {      get(); 
+     var x=document.getElementById("mul").value; 
+     str=str+x;   
+     document.getElementById("result").value=str; 
+} function division() 
+{      get(); 
+     var x=document.getElementById("div").value; 
+     str=str+x;        document.getElementById("result").value=str; 
+} function two() {      get();      str=str+2;        document.getElementById("result").value=str; 
+} function three() {      get();      str=str+3;        document.getElementById("result").value=str; 
+} function four() {      get();      str=str+4;        document.getElementById("result").value=str; 
+} function five() {      get();      str=str+5;        document.getElementById("result").value=str; 
+} function six() {      get();      str=str+6;        document.getElementById("result").value=str; 
+} 
+function seven() 
+{      get();      str=str+7;        document.getElementById("result").value=str; 
+} function eight() {      get();      str=str+8;        document.getElementById("result").value=str; 
+} function nine() {      get();      str=str+9;        document.getElementById("result").value=str; 
+} function zero() {      get();      str=str+0;        document.getElementById("result").value=str; 
+} function ce() {     document.getElementById("result").value=""; 
+} 
+</script> 
+</html>
